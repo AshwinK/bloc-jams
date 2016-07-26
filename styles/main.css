@@ -27,10 +27,10 @@ html {
 
  /* Medium and small screens (640px) */
  @media (min-width: 640px) {
-   /* Style information will go here */
+    html { font-size: 112%; }
  }
  
  /* Large screens (1024px) */
  @media (min-width: 1024px) {
-   /* Style information will go here */
+   html { font-size: 120%; }
  }
