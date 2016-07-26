@@ -25,7 +25,12 @@ html {
      left: 2rem;
  }
 
- /* Medium and small screens (640px) */
+.container {
+     margin: 0 auto;
+     max-width: 64rem;
+ } 
+
+/* Medium and small screens (640px) */
  @media (min-width: 640px) {
     html { font-size: 112%; }
  }
