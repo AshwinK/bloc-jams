@@ -30,6 +30,22 @@
      ]
  };
 
+// My Album
+ var albumAshwin = {
+     title: 'Cabbage Patch',
+     artist: 'Ashwin Khurana',
+     label: 'COD',
+     year: '1992',
+     albumArtUrl: 'assets/images/album_covers/22.png',
+     songs: [
+         { title: 'Hello, Goodbye?', duration: '2:53' },
+         { title: 'Told you so', duration: '4:29' },
+         { title: 'My turn now', duration: '3:81'},
+         { title: 'Too hot for this', duration: '1:55' },
+         { title: 'Another name, another day', duration: '4:14'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -42,13 +58,15 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
- var setCurrentAlbum = function(album) {
-     // #1
+// #1
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
+
+ var setCurrentAlbum = function(album) {
  
      // #2
      albumTitle.firstChild.nodeValue = album.title;
@@ -67,4 +85,15 @@ var createSongRow = function(songNumber, songName, songLength) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     
+     var albums = [albumPicasso, albumMarconi, albumAshwin];
+     var count = 1;
+     
+     albumImage.addEventListener("click", function(){
+        setCurrentAlbum(albums[count]);
+         count++;
+         if (count == albums.length) {
+             count = 0;
+         }
+     });
  };
