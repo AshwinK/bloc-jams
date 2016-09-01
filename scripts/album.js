@@ -64,7 +64,13 @@ var createSongRow = function(songNumber, songName, songLength) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
  };
+
+ var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     songListContainer.addEventListener('mouseover', function(event) {
+         // #1
+         console.log(event.target);
+     });
  };
